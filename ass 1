@@ -1,0 +1,134 @@
+search in array
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int array [20] , x , size , position , count =0;
+    cout << " Enter array size : ";
+    cin >> size;
+    cout << " Enter Array elements : \n";
+    for (int i =0; i<size; i++)
+    {
+        cout << " ";
+        cin >> array[i];
+    } 
+    cout << " Enter elements to be search : ";
+    cin >> x;
+    for (int i =0; i<size ; i++)
+    {
+        if (array[i] == x)
+        {
+            count = 1;
+            position = i+1;
+            break;
+        }
+    }
+    if(count == 0)
+    {
+        cout << "\nElement not found ";
+
+    }
+    else{
+        cout << "\nElement "<< x <<" found at position " << position;
+    }
+
+    return 0;
+}
+
+
+
+=======================================================================================
+
+
+insert value
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int array[50] , position , total , element;
+    cout << " Enter Size of array : ";
+    cin >> total;
+    cout << " Enter Elements of Array :\n ";
+    for( int i =0 ; i< total ; i++ )
+    {
+        cin >> array[i];
+    }
+    cout << " Enter element to insert :\n";
+    cin >> element;
+    cout << " Enter the position :\n";
+    cin >> position;
+
+    for (int i = total-1 ; i>= position; i-- )
+    {
+        array[i+1] = array[i];
+        array[i] = element;
+        total++;
+        
+    }
+    cout << " New array is :\n";
+    for (int i = 0 ; i < total ; i++ )
+    {
+        cout << array[i] << " ";
+    }
+    cout << endl ;
+    return 0;
+}
+
+
+
+====================================================================================
+
+
+Delete element
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[10] , total = 10 , element , found =0;
+    cout << "put 10 Array Elements : ";
+    for (int i =0; i<total ; i++)
+    
+        cin >> arr[i];
+     
+    cout << " \nEnter Element to Delete ";
+    cin >> element;
+
+    for(int i =0 ; i < total ; i++)
+    {
+        if (arr[i] == element)
+        {
+            for(int j=i ; j<total - 1 ; j++)
+            
+                arr[j] = arr[j+1];
+                found++;
+                i--;
+                total--;
+        }
+    }
+    if (found == 0)
+    {
+        cout << "\nElement not Found  ";
+    }
+    else{
+        cout << "\n Element is Deleted \n";
+        for (int i =0; i<total ; i++)
+        {
+            cout << arr[i] << "  ";
+        }
+    }
+    
+
+
+    return 0;
+}
